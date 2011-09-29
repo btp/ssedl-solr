@@ -4,7 +4,8 @@
     http://wiki.apache.org/solr/SchemaXml.  The page also has a link to an 
     extensively commented version of this file.
 -->
-<schema name="Blacklight Demo Index" version="1.2">
+<schema name="SSEDL Index" version="0.2">
+   <!-- from Blacklight Demo Search -->
   <!-- attribute "name" is the name of this schema and is only used for display purposes.
        Applications should change this to reflect the nature of the search collection.
        version="1.2" is Solr's version number for the schema syntax and semantics.  It should
@@ -239,13 +240,16 @@
     <field name="id" type="string" indexed="true" stored="true" required="true" />
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
     <!-- default, catch all search field -->
-    <field name="text" type="text" indexed="true" stored="false" multiValued="true"/>
+    <!--field name="text" type="text" indexed="true" stored="false" multiValued="true"/-->
+    <field name="study_search" type="text" indexed="true" stored="false" multiValued="true"/>
+    <field name="var_search" type="text" indexed="true" stored="false" multiValued="true"/>
 
-    <!-- these display fields are NOT multi-valued -->
-    <!-- study-wide fields -->
+    <!-- for both study-wide and variable -->
     <field name="title_display" type="string" indexed="false" stored="true" multiValued="false"/>
+
+    <!-- study-wide fields -->
+    <field name="study_title_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="abbr_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="investigator_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="funder_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="collector_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="abstract_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -254,9 +258,12 @@
     <field name="instrument_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="response_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <!-- variable-specific fields -->
+    <field name="var_name_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="var_label_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="var_value_display" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="val_label_display" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="val_val_display" type="string" indexed="false" stored="true" multiValued="true"/>
 
+    <!-- these display fields are NOT multi-valued -->
     <!--
     <field name="marc_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="title_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -268,8 +275,9 @@
     -->
 
     <!-- these fields are also used for display, so they must be stored -->
-    <field name="archive_facet" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="archive_facet" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="nation_facet" type="string" indexed="true" stored="true" multiValued="true" />
+    <field name="investigator_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="var_topic_facet" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_type_facet" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_alphanum_facet" type="string" indexed="true" stored="true" multiValued="false" />
@@ -314,14 +322,14 @@
   </fields>
 
   <uniqueKey>id</uniqueKey>
-  <defaultSearchField>text</defaultSearchField>
+  <defaultSearchField>study_search</defaultSearchField>
+  <!--defaultSearchField>text</defaultSearchField-->
   <solrQueryParser defaultOperator="OR"/>
 
   <!-- Copy Fields -->
 
   <!-- unstemmed fields -->
   <copyField source="title_t" dest="title_unstem_search"/>
-  <copyField source="var_label_t" dest="var_label_unstem_search"/>
   <copyField source="investigator_t" dest="investigator_unstem_search"/>
   <copyField source="funder_t" dest="funder_unstem_search"/>
   <copyField source="collector_t" dest="collector_unstem_search"/>
@@ -350,9 +358,15 @@
   <!-- it won't work with a copy of a copy field -->
   <copyField source="*_t" dest="spell"/>
   <copyField source="*_facet" dest="spell"/>
+
+  <!-- study spell check;  should match fields for study request handler -->
+  <copyField source="study_search" dest="study_spell"/>
+
+  <!-- variable spell check;  should match fields for variable request handler -->
+  <copyField source="var_search" dest="var_spell"/>
+
   <!-- title spell check;  should match fields for title request handler -->
   <copyField source="title_t" dest="title_spell"/>
-  <copyField source="var_label_t" dest="var_label_spell"/>
 
   <!--
   <copyField source="title_t" dest="title_spell"/>
@@ -379,7 +393,6 @@
   
   <!-- OpenSearch query field should match request handler search fields -->
   <copyField source="title_t" dest="opensearch_display"/>
-  <copyField source="var_label_t" dest="opensearch_display"/>
   <copyField source="investigator_t" dest="opensearch_display"/>
   <copyField source="funder_t" dest="opensearch_display"/>
   <copyField source="collector_t" dest="opensearch_display"/>

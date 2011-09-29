@@ -117,14 +117,15 @@
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
           <str name="facet.limit">10</str>
-          <str name="facet.field">format</str>
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
           <str name="facet.field">lc_b4cutter_facet</str>
+          <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
           <str name="facet.field">nation_facet</str>
+          <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_alphanum_facet</str>
@@ -147,14 +148,15 @@
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
           <str name="facet.limit">10</str>
-          <str name="facet.field">format</str>
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
           <str name="facet.field">lc_b4cutter_facet</str>
+          <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
           <str name="facet.field">nation_facet</str>
+          <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_alphanum_facet</str>
@@ -183,14 +185,15 @@
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
           <str name="facet.limit">10</str>
-          <str name="facet.field">format</str>
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
           <str name="facet.field">lc_b4cutter_facet</str>
+          <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
           <str name="facet.field">nation_facet</str>
+          <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_alphanum_facet</str>
@@ -213,14 +216,15 @@
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
           <str name="facet.limit">10</str>
-          <str name="facet.field">format</str>
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
           <str name="facet.field">lc_b4cutter_facet</str>
+          <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
           <str name="facet.field">nation_facet</str>
+          <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_alphanum_facet</str>
@@ -278,11 +282,8 @@
         funder_t^100
         collector_unstem_search^250
         collector_t^100
-        var_topic_unstem_search^1000
-        var_type_unstem_search^1000
-        var_topic_facet^625
-        var_type_facet^625
-        text
+        study_search
+        var_search
       </str>
       <str name="pf">
         title_unstem_search^1000000
@@ -293,11 +294,20 @@
         funder_t^1000
         collector_unstem_search^2500
         collector_t^1000
-        var_topic_unstem_search^1000
-        var_type_unstem_search^1000
-        var_topic_facet^6250
-        var_type_facet^6250
-        text^10
+        study_search_t^10
+        var_search_t^10
+      </str>
+      <str name="study_qf">
+        study_search
+      </str>
+      <str name="study_pf">
+        study_search_t^10
+      </str>
+      <str name="var_qf">
+        var_search
+      </str>
+      <str name="var_pf">
+        var_search_t^10
       </str>
       <str name="title_qf">
         title_unstem_search^50000
@@ -330,22 +340,6 @@
       <str name="collector_pf">
         collector_unstem_search^2000
         collector_t^200
-      </str>
-      <str name="var_topic_qf">
-        var_topic_unstem_search^200
-        var_topic_facet^100
-      </str>
-      <str name="var_topic_pf">
-        var_topic_unstem_search^2000
-        var_topic_facet^500
-      </str>
-      <str name="var_type_qf">
-        var_type_unstem_search^200
-        var_type_facet^100
-      </str>
-      <str name="var_type_pf">
-        var_type_unstem_search^2000
-        var_type_facet^500
       </str>
       <!--
       <str name="qf">
@@ -458,9 +452,11 @@
         id, 
         format, 
         score,
+        study_search,
+        var_search,
         title_display,
+        study_title_display,
         abbr_display,
-        investigator_display,
         funder_display,
         collector_display,
         abstract_display,
@@ -468,10 +464,13 @@
         sampling_display,
         instrument_display,
         response_display,
+        var_name_display,
         var_label_display,
-        var_value_display,
+        val_label_display,
+        val_val_display,
         archive_facet, 
         nation_facet, 
+        investigator_facet,
         var_topic_facet, 
         var_type_facet, 
         var_alphanum_facet, 
@@ -507,20 +506,21 @@
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
       <str name="facet.limit">10</str>
-      <str name="facet.field">format</str>
       <str name="facet.field">lc_1letter_facet</str>
       <str name="facet.field">lc_alpha_facet</str>
       <str name="facet.field">lc_b4cutter_facet</str>
+      <str name="facet.field">language_facet</str>
+      <str name="facet.field">format</str>
 
       <str name="facet.field">archive_facet</str>
       <str name="facet.field">nation_facet</str>
+      <str name="facet.field">investigator_facet</str>
       <str name="facet.field">var_topic_facet</str>
       <str name="facet.field">var_type_facet</str>
       <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
       <!--
-      <str name="facet.field">language_facet</str>
       <str name="facet.field">pub_date</str>
       <str name="facet.field">subject_era_facet</str>
       <str name="facet.field">subject_geo_facet</str>
@@ -575,26 +575,7 @@
         investigator_unstem_search^2000
         investigator_t^200
       </str>
-      
-      <!-- for user query terms in funder text box -->
-      <str name="funder_qf">
-        funder_unstem_search^200
-        funder_t^20
-      </str>
-      <str name="funder_pf">
-        funder_unstem_search^2000
-        funder_t^200
-      </str>
 
-      <!-- for user query terms in collector text box -->
-      <str name="collector_qf">
-        collector_unstem_search^200
-        collector_t^20
-      </str>
-      <str name="collector_pf">
-        collector_unstem_search^2000
-        collector_t^200
-      </str>
       <!-- for user query terms in author text box -->
       <!--
       <str name="qf_author">
@@ -649,26 +630,6 @@
       </str>
       -->
       
-      <!-- for user query terms in variable topic text box -->
-      <str name="var_topic_qf">
-        var_topic_unstem_search^200
-        var_topic_facet^100
-      </str>
-      <str name="var_topic_pf">
-        var_topic_unstem_search^2000
-        var_topic_facet^500
-      </str>
-
-      <!-- for user query terms in variable type text box -->
-      <str name="var_type_qf">
-        var_type_unstem_search^200
-        var_type_facet^100
-      </str>
-      <str name="var_type_pf">
-        var_type_unstem_search^2000
-        var_type_facet^500
-      </str>
-
       <!-- for user query terms in subject text box -->
       <!--
       <str name="qf_subject">
@@ -690,22 +651,29 @@
       -->
       
       <!-- for user query terms in number text box -->
-      <!--
-      <str name="qf_number">isbn_t</str>
-      -->
+      <!--str name="qf_number">isbn_t</str-->
       
-      <!-- for user query terms in keyword text box -->
-      <str name="qf_keyword">text</str>
-      <str name="pf_keyword">text^10</str>
+      <!-- for user query terms in study keyword text box -->
+      <str name="qf_keyword">study_search</str>
+      <str name="pf_keyword">study_search^10</str>
+
+      <!-- for user query terms in variable keyword text box -->
+      <str name="qf_keyword">var_search</str>
+      <str name="pf_keyword">var_search^10</str>
+
+      <!--str name="qf_keyword">text</str-->
+      <!--str name="pf_keyword">text^10</str-->
       
       <!-- NOT using marc_display because it is large and will slow things down for search results -->
       <str name="fl">
         id, 
         format, 
         score,
+        study_search,
+        var_search,
         title_display,
+        study_title_display,
         abbr_display,
-        investigator_display,
         funder_display,
         collector_display,
         abstract_display,
@@ -713,10 +681,13 @@
         sampling_display,
         instrument_display,
         response_display,
+        var_name_display,
         var_label_display,
-        var_value_display,
+        val_label_display,
+        val_val_display,
         archive_facet, 
         nation_facet, 
+        investigator_facet,
         var_topic_facet, 
         var_type_facet, 
         var_alphanum_facet, 
@@ -752,20 +723,21 @@
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
       <str name="facet.limit">10</str>
-      <str name="facet.field">format</str>
       <str name="facet.field">lc_1letter_facet</str>
       <str name="facet.field">lc_alpha_facet</str>
       <str name="facet.field">lc_b4cutter_facet</str>
+      <str name="facet.field">language_facet</str>
+      <str name="facet.field">format</str>
 
       <str name="facet.field">archive_facet</str>
       <str name="facet.field">nation_facet</str>
+      <str name="facet.field">investigator_facet</str>
       <str name="facet.field">var_topic_facet</str>
       <str name="facet.field">var_type_facet</str>
       <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
       <!--
-      <str name="facet.field">language_facet</str>
       <str name="facet.field">pub_date</str>
       <str name="facet.field">subject_era_facet</str>
       <str name="facet.field">subject_geo_facet</str>
@@ -773,7 +745,8 @@
       -->
       
       <str name="spellcheck">true</str>
-      <str name="spellcheck.dictionary">subject</str>
+      <str name="spellcheck.dictionary">study</str>
+      <!--str name="spellcheck.dictionary">subject</str-->
       <str name="spellcheck.onlyMorePopular">true</str>
       <str name="spellcheck.extendedResults">true</str>
       <str name="spellcheck.collate">false</str>
@@ -793,19 +766,26 @@
       <str name="buildOnOptimize">true</str>
     </lst>
     <lst name="spellchecker">
-      <str name="name">author</str>
-      <str name="field">author_spell</str>
-      <str name="spellcheckIndexDir">./spell_author</str>
+      <str name="name">study</str>
+      <str name="field">study_spell</str>
+      <str name="spellcheckIndexDir">./spell_study</str>
+      <!--str name="name">author</str-->
+      <!--str name="field">author_spell</str-->
+      <!--str name="spellcheckIndexDir">./spell_author</str-->
       <str name="accuracy">0.7</str>
       <str name="buildOnOptimize">true</str>
     </lst>
     <lst name="spellchecker">
-      <str name="name">subject</str>
-      <str name="field">subject_spell</str>
-      <str name="spellcheckIndexDir">./spell_subject</str>
+      <str name="name">var</str>
+      <str name="field">var_spell</str>
+      <str name="spellcheckIndexDir">./spell_var</str>
+      <!--str name="name">subject</str-->
+      <!--str name="field">subject_spell</str-->
+      <!--str name="spellcheckIndexDir">./spell_subject</str-->
       <str name="accuracy">0.7</str>
       <str name="buildOnOptimize">true</str>
     </lst>
+    <!--
     <lst name="spellchecker">
       <str name="name">title</str>
       <str name="field">title_spell</str>
@@ -813,6 +793,7 @@
       <str name="accuracy">0.7</str>
       <str name="buildOnOptimize">true</str>
     </lst>
+    -->
   </searchComponent>
 
   <requestHandler name="/update" class="solr.XmlUpdateRequestHandler" />
@@ -823,13 +804,13 @@
     <lst name="defaults">
       <str name="qt">search</str>
       <str name="q">study</str>
-      <!--<str name="q">book</str>-->
+      <!--str name="q">book</str-->
       <str name="echoParams">all</str>
     </lst>
   </requestHandler>
   <admin>
     <defaultQuery>study</defaultQuery>
-    <!--<defaultQuery>book</defaultQuery>-->
+    <!--defaultQuery>book</defaultQuery-->
   </admin>
 
   <requestHandler name="/debug/dump" class="solr.DumpRequestHandler" >
