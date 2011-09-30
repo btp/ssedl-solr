@@ -260,8 +260,7 @@
     <!-- variable-specific fields -->
     <field name="var_name_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="var_label_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="val_label_display" type="string" indexed="false" stored="true" multiValued="true"/>
-    <field name="val_val_display" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="val_display" type="string" indexed="false" stored="true" multiValued="false"/>
 
     <!-- these display fields are NOT multi-valued -->
     <!--

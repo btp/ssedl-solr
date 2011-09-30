@@ -28,11 +28,196 @@
 		<xsl:for-each select="codeBook/stdyDscr/stdyInfo/sumDscr/nation">
 		        <field name="nation_facet"><xsl:value-of select="." /></field>
 		</xsl:for-each>
-		<field name="abstract_display"><xsl:value-of select="codeBook/stdyDscr/stdyInfo/abstract" /></field>
-		<field name="universe_display"><xsl:value-of select="codeBook/stdyDscr/stdyInfo/sumDscr/universe" /></field>
-		<field name="sampling_display"><xsl:value-of select="codeBook/stdyDscr/method/dataColl/sampProc" /></field>
-		<field name="instrument_display"><xsl:value-of select="codeBook/stdyDscr/method/dataColl/resInstru" /></field>
-		<field name="response_display"><xsl:value-of select="codeBook/stdyDscr/method/anlyInfo/respRate" /></field>
+                <field name="abstract_display">
+                   <xsl:for-each select="codeBook/stdyDscr/stdyInfo/abstract/*">
+                      <xsl:choose>
+                         <xsl:when test="name() = 'list'">
+                            <xsl:choose>
+                               <xsl:when test="@type = 'ordered'">
+                                  &lt;ol&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ol&gt;
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  &lt;ul&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ul&gt;
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </xsl:when>
+                         <xsl:otherwise>
+                            &lt;p&gt;
+                            <xsl:value-of select="."/>
+                            &lt;/p&gt;
+                         </xsl:otherwise>
+                      </xsl:choose>
+                   </xsl:for-each>
+                   <xsl:if test="not(codeBook/stdyDscr/stdyInfo/abstract/*)">
+                      &lt;p&gt;
+                      <xsl:value-of select="codeBook/stdyDscr/stdyInfo/abstract"/>
+                      &lt;/p&gt;
+                   </xsl:if>
+                </field>
+                <field name="universe_display">
+                   <xsl:for-each select="codeBook/stdyDscr/stdyInfo/sumDscr/universe/*">
+                      <xsl:choose>
+                         <xsl:when test="name() = 'list'">
+                            <xsl:choose>
+                               <xsl:when test="@type = 'ordered'">
+                                  &lt;ol&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ol&gt;
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  &lt;ul&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ul&gt;
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </xsl:when>
+                         <xsl:otherwise>
+                            &lt;p&gt;
+                            <xsl:value-of select="."/>
+                            &lt;/p&gt;
+                         </xsl:otherwise>
+                      </xsl:choose>
+                   </xsl:for-each>
+                   <xsl:if test="not(codeBook/stdyDscr/stdyInfo/sumDscr/universe/*)">
+                      &lt;p&gt;
+                      <xsl:value-of select="codeBook/stdyDscr/stdyInfo/sumDscr/universe"/>
+                      &lt;/p&gt;
+                   </xsl:if>
+                </field>
+                <field name="sampling_display">
+                   <xsl:for-each select="codeBook/stdyDscr/method/dataColl/sampProc/*">
+                      <xsl:choose>
+                         <xsl:when test="name() = 'list'">
+                            <xsl:choose>
+                               <xsl:when test="@type = 'ordered'">
+                                  &lt;ol&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ol&gt;
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  &lt;ul&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ul&gt;
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </xsl:when>
+                         <xsl:otherwise>
+                            &lt;p&gt;
+                            <xsl:value-of select="."/>
+                            &lt;/p&gt;
+                         </xsl:otherwise>
+                      </xsl:choose>
+                   </xsl:for-each>
+                   <xsl:if test="not(codeBook/stdyDscr/method/dataColl/sampProc/*)">
+                      &lt;p&gt;
+                      <xsl:value-of select="codeBook/stdyDscr/method/dataColl/sampProc"/>
+                      &lt;/p&gt;
+                   </xsl:if>
+                </field>
+                <field name="instrument_display">
+                   <xsl:for-each select="codeBook/stdyDscr/method/dataColl/resInstru/*">
+                      <xsl:choose>
+                         <xsl:when test="name() = 'list'">
+                            <xsl:choose>
+                               <xsl:when test="@type = 'ordered'">
+                                  &lt;ol&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ol&gt;
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  &lt;ul&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ul&gt;
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </xsl:when>
+                         <xsl:otherwise>
+                            &lt;p&gt;
+                            <xsl:value-of select="."/>
+                            &lt;/p&gt;
+                         </xsl:otherwise>
+                      </xsl:choose>
+                   </xsl:for-each>
+                   <xsl:if test="not(codeBook/stdyDscr/method/dataColl/resInstru/*)">
+                      &lt;p&gt;
+                      <xsl:value-of select="codeBook/stdyDscr/method/dataColl/resInstru"/>
+                      &lt;/p&gt;
+                   </xsl:if>
+                </field>
+                <field name="response_display">
+                   <xsl:for-each select="codeBook/stdyDscr/method/anlyInfo/respRate/*">
+                      <xsl:choose>
+                         <xsl:when test="name() = 'list'">
+                            <xsl:choose>
+                               <xsl:when test="@type = 'ordered'">
+                                  &lt;ol&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ol&gt;
+                               </xsl:when>
+                               <xsl:otherwise>
+                                  &lt;ul&gt;
+                                  <xsl:for-each select="itm">
+                                     &lt;li&gt;
+                                     <xsl:value-of select="."/>
+                                     &lt;/li&gt;
+                                  </xsl:for-each>
+                                  &lt;/ul&gt;
+                               </xsl:otherwise>
+                            </xsl:choose>
+                         </xsl:when>
+                         <xsl:otherwise>
+                            &lt;p&gt;
+                            <xsl:value-of select="."/>
+                            &lt;/p&gt;
+                         </xsl:otherwise>
+                      </xsl:choose>
+                   </xsl:for-each>
+                   <xsl:if test="not(codeBook/stdyDscr/method/anlyInfo/respRate/*)">
+                      &lt;p&gt;
+                      <xsl:value-of select="codeBook/stdyDscr/method/anlyInfo/respRate"/>
+                      &lt;/p&gt;
+                   </xsl:if>
+                </field>
 		<xsl:for-each select="codeBook/stdyDscr/stdyInfo/sumDscr/collDate/@date">
 			<field name="date"><xsl:value-of select="." /></field>
 		</xsl:for-each>
@@ -299,13 +484,38 @@
 			</xsl:otherwise>
 		</xsl:choose>
 		<field name="var_alphanum_facet"><xsl:value-of select="varFormat/@type" /></field>
-		<xsl:for-each select="catgry/catValu">
-			<field name="val_val_display"><xsl:value-of select="." /></field>
-		</xsl:for-each>
-		<xsl:for-each select="catgry/labl">
-			<field name="val_label_display"><xsl:value-of select="." /></field>
-		</xsl:for-each>
-				
+                <field name="val_display">
+                   <![CDATA[
+                   <table border="1">
+                      <tbody>
+                         <tr><th>Value</th><th>Label</th><th>Frequency</th></tr>
+                         ]]>
+                         <xsl:for-each select="catgry">
+                         <![CDATA[
+                            <tr>
+                               <th>
+                         ]]>
+                                  <xsl:value-of select="catValu" />
+                                  <![CDATA[
+                               </th>
+                               <td>
+                                  ]]>
+                                  <xsl:value-of select="labl" />
+                                  <![CDATA[
+                               </td>
+                               <td>
+                                  ]]>
+                                  <xsl:value-of select="catStat[@type='freq']" />
+                                  <![CDATA[
+                               </td>
+                            </tr>
+                                  ]]>
+	                 </xsl:for-each>
+	           <![CDATA[
+                      </tbody>
+                   </table>
+                   ]]>
+                   </field>
 	</doc>
 	</xsl:for-each>			
   </add>

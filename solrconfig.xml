@@ -116,7 +116,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
-          <str name="facet.limit">10</str>
+          <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
@@ -147,7 +147,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
-          <str name="facet.limit">10</str>
+          <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
@@ -184,7 +184,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
-          <str name="facet.limit">10</str>
+          <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
@@ -215,7 +215,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
-          <str name="facet.limit">10</str>
+          <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
           <str name="facet.field">lc_alpha_facet</str>
@@ -466,8 +466,7 @@
         response_display,
         var_name_display,
         var_label_display,
-        val_label_display,
-        val_val_display,
+        val_display,
         archive_facet, 
         nation_facet, 
         investigator_facet,
@@ -505,7 +504,7 @@
 
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
-      <str name="facet.limit">10</str>
+      <!--str name="facet.limit">10</str-->
       <str name="facet.field">lc_1letter_facet</str>
       <str name="facet.field">lc_alpha_facet</str>
       <str name="facet.field">lc_b4cutter_facet</str>
@@ -683,8 +682,7 @@
         response_display,
         var_name_display,
         var_label_display,
-        val_label_display,
-        val_val_display,
+        val_display,
         archive_facet, 
         nation_facet, 
         investigator_facet,
@@ -722,7 +720,7 @@
 
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
-      <str name="facet.limit">10</str>
+      <!--str name="facet.limit">10</str-->
       <str name="facet.field">lc_1letter_facet</str>
       <str name="facet.field">lc_alpha_facet</str>
       <str name="facet.field">lc_b4cutter_facet</str>
