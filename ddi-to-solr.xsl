@@ -40,7 +40,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ol&gt;
+                                  &lt;/ol&gt;&lt;br/&gt;
                                </xsl:when>
                                <xsl:otherwise>
                                   &lt;ul&gt;
@@ -49,7 +49,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ul&gt;
+                                  &lt;/ul&gt;&lt;br/&gt;
                                </xsl:otherwise>
                             </xsl:choose>
                          </xsl:when>
@@ -78,7 +78,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ol&gt;
+                                  &lt;/ol&gt;&lt;br/&gt;
                                </xsl:when>
                                <xsl:otherwise>
                                   &lt;ul&gt;
@@ -87,7 +87,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ul&gt;
+                                  &lt;/ul&gt;&lt;br/&gt;
                                </xsl:otherwise>
                             </xsl:choose>
                          </xsl:when>
@@ -116,7 +116,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ol&gt;
+                                  &lt;/ol&gt;&lt;br/&gt;
                                </xsl:when>
                                <xsl:otherwise>
                                   &lt;ul&gt;
@@ -125,7 +125,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ul&gt;
+                                  &lt;/ul&gt;&lt;br/&gt;
                                </xsl:otherwise>
                             </xsl:choose>
                          </xsl:when>
@@ -154,7 +154,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ol&gt;
+                                  &lt;/ol&gt;&lt;br/&gt;
                                </xsl:when>
                                <xsl:otherwise>
                                   &lt;ul&gt;
@@ -163,7 +163,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ul&gt;
+                                  &lt;/ul&gt;&lt;br/&gt;
                                </xsl:otherwise>
                             </xsl:choose>
                          </xsl:when>
@@ -192,7 +192,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ol&gt;
+                                  &lt;/ol&gt;&lt;br/&gt;
                                </xsl:when>
                                <xsl:otherwise>
                                   &lt;ul&gt;
@@ -201,7 +201,7 @@
                                      <xsl:value-of select="."/>
                                      &lt;/li&gt;
                                   </xsl:for-each>
-                                  &lt;/ul&gt;
+                                  &lt;/ul&gt;&lt;br/&gt;
                                </xsl:otherwise>
                             </xsl:choose>
                          </xsl:when>
@@ -226,7 +226,6 @@
 	<doc>
 		<field name="id"><xsl:value-of select="../../@ID" />_<xsl:value-of select="@name" /></field>
 		<field name="var_search"><xsl:value-of select="." /></field>
- 
 		<field name="var_name_display"><xsl:value-of select="@name" /></field>
 		<field name="format">Variable</field>	
                 <field name="archive_facet"><xsl:value-of select="../../docDscr/citation/prodStmt/producer" /></field>
@@ -247,7 +246,7 @@
 				<field name="var_topic_facet">Adoption/Foster Care</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MO'">
-				<field name="var_topic_facet">Residential Mobilityl</field>
+				<field name="var_topic_facet">Residential Mobility</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'AG'">
 				<field name="var_topic_facet">Age</field>
@@ -370,7 +369,7 @@
 				<field name="var_topic_facet">Receipt of Health, Mental Health, Social Services</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'IS'">
-				<field name="var_topic_facet">Institutions, not specified</field>
+				<field name="var_topic_facet">Institutions, Not Specified</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SA'">
 				<field name="var_topic_facet">Substance Use</field>
@@ -485,6 +484,28 @@
 		</xsl:choose>
 		<field name="var_alphanum_facet"><xsl:value-of select="varFormat/@type" /></field>
                 <field name="val_display">
+                &lt;p&gt;Summary Statistics:&lt;/p&gt;
+                &lt;ul&gt;
+                   <xsl:if test="valrng">
+                      &lt;li&gt;Range: <xsl:value-of select="valrng/range/@min"/> to <xsl:value-of select="valrng/range/@max"/>&lt;/li&gt;
+                   </xsl:if>
+                   &lt;li&gt;Total Responses: <xsl:value-of select="sum(sumStat[@type='vald'],sumStat[@type='invd'])"/>&lt;/li&gt;
+                   &lt;li&gt;Valid: <xsl:value-of select="sumStat[@type='vald']"/>&lt;/li&gt;
+                   &lt;li&gt;Invalid: <xsl:value-of select="sumStat[@type='invd']"/>&lt;/li&gt;
+                   <xsl:if test="sumStat[@type='min']">
+                      &lt;li&gt;Minimum: <xsl:value-of select="sumStat[@type='min']"/>&lt;/li&gt;
+                   </xsl:if>
+                   <xsl:if test="sumStat[@type='max']">
+                      &lt;li&gt;Maximum: <xsl:value-of select="sumStat[@type='max']"/>&lt;/li&gt;
+                   </xsl:if>
+                   <xsl:if test="sumStat[@type='mean']">
+                      &lt;li&gt;Mean: <xsl:value-of select="sumStat[@type='mean']"/>&lt;/li&gt;
+                   </xsl:if>
+                   <xsl:if test="sumStat[@type='stdev']">
+                      &lt;li&gt;Standard Deviation: <xsl:value-of select="sumStat[@type='stdev']"/>&lt;/li&gt;
+                   </xsl:if>
+                   &lt;/ul&gt;&lt;br/&gt;
+                <xsl:if test="catgry">
                    <![CDATA[
                    <table border="1">
                       <tbody>
@@ -503,7 +524,7 @@
                                   <xsl:value-of select="labl" />
                                   <![CDATA[
                                </td>
-                               <td>
+                               <td style="text-align: right;">
                                   ]]>
                                   <xsl:value-of select="catStat[@type='freq']" />
                                   <![CDATA[
@@ -512,10 +533,20 @@
                                   ]]>
 	                 </xsl:for-each>
 	           <![CDATA[
+	                    <tr>
+                               <th>Total</th>
+                               <td> </td>
+                               <td style="text-align: right;">
+                   ]]>
+                   <xsl:value-of select="sum(sumStat[@type='vald'],sumStat[@type='invd'])"/>
+                   <![CDATA[
+                              </td>
+                           </tr>
                       </tbody>
                    </table>
                    ]]>
-                   </field>
+                   </xsl:if>
+                </field>
 	</doc>
 	</xsl:for-each>			
   </add>
