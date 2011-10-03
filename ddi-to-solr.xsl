@@ -11,6 +11,7 @@
          </field>
          <field name="format">Study</field>
          <field name="archive_facet"><xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer"/></field>
+         <field name="archive_code"><xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer/@abbr"/></field>
          <field name="archive_display">
             &lt;a href="/catalog/<xsl:value-of select="lower-case(codeBook/docDscr/citation/prodStmt/producer/@abbr)"/>"&gt;<xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer"/>&lt;/a&gt;
          </field>
@@ -39,6 +40,9 @@
                </field>
             </xsl:if>
          </xsl:for-each>
+         <field name="download_ddi2-1_display">
+            &lt;a class="download" href="/download/<xsl:value-of select="codeBook/@ID"/>/<xsl:value-of select="codeBook/@ID"/>.xml"&gt;Download &lt;abbr title="Data Documentation Initiative"&gt;DDI&lt;/abbr&gt; 2.1 Codebook&lt;/a&gt;
+         </field>
          <xsl:for-each select="codeBook/stdyDscr/citation/rspStmt/AuthEnty">
             <field name="investigator_facet"><xsl:value-of select="."/></field>
          </xsl:for-each>
@@ -266,6 +270,7 @@
             <xsl:choose>
                <xsl:when test="$topic = 'AC'">
                   <field name="var_topic_facet">Agency Characteristics</field>
+                  <field name="var_topic_code">AC</field>
                </xsl:when>
                <xsl:when test="$topic = 'MM'">
                   <field name="var_topic_facet">Mood Disorders</field>

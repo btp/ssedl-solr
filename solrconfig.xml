@@ -254,7 +254,9 @@
   <requestHandler name="standard" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="echoParams">all</str>
-      <str name="q.op">AND</str>
+      <!--btp: changed default search operator to OR. -->
+      <str name="q.op">OR</str>
+      <!--str name="q.op">AND</str-->
     </lst>
   </requestHandler>
 
@@ -468,6 +470,7 @@
         download_study_display,
         download_ins_display,
         download_sup_display,
+        download_ddi2-1_display,
         var_name_display,
         var_label_display,
         val_display,
@@ -561,7 +564,9 @@
       <str name="sort">score desc, date_sort desc, title_sort asc</str>   
       <!--<str name="sort">score desc, pub_date_sort desc, title_sort asc</str>-->
       <str name="df">text</str> 
-      <str name="q.op">AND</str> 
+      <!-- btp: changed default operator to OR. -->
+      <str name="q.op">OR</str> 
+      <!--str name="q.op">AND</str--> 
       <str name="qs">1</str>
 
       <!-- used for dismax query parser -->
@@ -688,7 +693,7 @@
         download_use_display,
         download_study_display,
         download_ins_display,
-        download_sup_display,
+        download_ddi2-1_display,
         var_name_display,
         var_label_display,
         val_display,

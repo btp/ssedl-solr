@@ -262,6 +262,7 @@
     <field name="download_study_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="download_ins_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="download_sup_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_ddi2-1_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <!-- variable-specific fields -->
     <field name="var_name_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="var_label_display" type="string" indexed="false" stored="true" multiValued="false"/>
