@@ -246,6 +246,7 @@
 
     <!-- for both study-wide and variable -->
     <field name="title_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="archive_display" type="string" indexed="false" stored="true" multiValued="false"/>
 
     <!-- study-wide fields -->
     <field name="study_title_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -257,6 +258,10 @@
     <field name="sampling_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="instrument_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="response_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_use_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_study_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_ins_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_sup_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <!-- variable-specific fields -->
     <field name="var_name_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="var_label_display" type="string" indexed="false" stored="true" multiValued="false"/>
