@@ -256,6 +256,7 @@
             <field name="var_name_display"><xsl:value-of select="@name"/></field>
             <field name="format">Variable</field>
             <field name="archive_facet"><xsl:value-of select="../../docDscr/citation/prodStmt/producer"/></field>
+            <field name="archive_code"><xsl:value-of select="../../docDscr/citation/prodStmt/producer/@abbr"/></field>
             <field name="archive_display">
                &lt;a href="/catalog/<xsl:value-of select="lower-case(../../docDscr/citation/prodStmt/producer/@abbr)"/>"&gt;<xsl:value-of select="../../docDscr/citation/prodStmt/producer"/>&lt;/a&gt;
             </field>
@@ -274,186 +275,247 @@
                </xsl:when>
                <xsl:when test="$topic = 'MM'">
                   <field name="var_topic_facet">Mood Disorders</field>
+                  <field name="var_topic_code">MM</field>
                </xsl:when>
                <xsl:when test="$topic = 'AD'">
                   <field name="var_topic_facet">Adoption/Foster Care</field>
+                  <field name="var_topic_code">AD</field>
                </xsl:when>
                <xsl:when test="$topic = 'MO'">
                   <field name="var_topic_facet">Residential Mobility</field>
+                  <field name="var_topic_code">MO</field>
                </xsl:when>
                <xsl:when test="$topic = 'AG'">
                   <field name="var_topic_facet">Age</field>
+                  <field name="var_topic_code">AG</field>
                </xsl:when>
                <xsl:when test="$topic = 'MP'">
                   <field name="var_topic_facet">Psychoactive Substance-Use Disorder</field>
+                  <field name="var_topic_code">MP</field>
                </xsl:when>
                <xsl:when test="$topic = 'BC'">
                   <field name="var_topic_facet">Board &amp; Care/Residential Care</field>
+                  <field name="var_topic_code">BC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MS'">
 				<field name="var_topic_facet">Somatoform Disorders</field>
+                  <field name="var_topic_code">MS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'BF'">
 				<field name="var_topic_facet">Biological Function/Effects of Aging</field>
+                  <field name="var_topic_code">BF</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MZ'">
 				<field name="var_topic_facet">Schizophrenia</field>
+                  <field name="var_topic_code">MZ</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CB'">
 				<field name="var_topic_facet">Childbearing/Pregnancy</field>
+                  <field name="var_topic_code">CB</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'NC'">
 				<field name="var_topic_facet">Neighborhood/Community</field>
+                  <field name="var_topic_code">NC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CC'">
 				<field name="var_topic_facet">Caregiving/Child Care</field>
+                  <field name="var_topic_code">CC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'NH'">
 				<field name="var_topic_facet">Nursing Home</field>
+                  <field name="var_topic_code">NH</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CI'">
 				<field name="var_topic_facet">Crime/Delinquency/Behavior Problems</field>
+                  <field name="var_topic_code">CI</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'NK'">
 				<field name="var_topic_facet">Relationships with Non-Kin</field>
+                  <field name="var_topic_code">NK</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CL'">
 				<field name="var_topic_facet">Clinical Activities</field>
+                  <field name="var_topic_code">CL</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'NU'">
 				<field name="var_topic_facet">Nutrition</field>
+                  <field name="var_topic_code">NU</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CO'">
 				<field name="var_topic_facet">Cohabitation</field>
+                  <field name="var_topic_code">CO</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'OC'">
 				<field name="var_topic_facet">Occupation/Employment/Retirement</field>
+                  <field name="var_topic_code">OC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'CP'">
 				<field name="var_topic_facet">Civic/Political Activities</field>
+                  <field name="var_topic_code">CP</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'OT'">
 				<field name="var_topic_facet">Other</field>
+                  <field name="var_topic_code">OT</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'DC'">
 				<field name="var_topic_facet">Dating/Courtship</field>
+                  <field name="var_topic_code">DC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'PC'">
 				<field name="var_topic_facet">Parent-Child Relationships</field>
+                  <field name="var_topic_code">PC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'DW'">
 				<field name="var_topic_facet">Dwelling</field>
+                  <field name="var_topic_code">DW</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'PE'">
 				<field name="var_topic_facet">Personality</field>
+                  <field name="var_topic_code">PE</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'ED'">
 				<field name="var_topic_facet">Education</field>
+                  <field name="var_topic_code">ED</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'PF'">
 				<field name="var_topic_facet">Psychological Functioning/Development</field>
+                  <field name="var_topic_code">PF</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'FS'">
 				<field name="var_topic_facet">Friends/Social Activities/Social Support</field>
+                  <field name="var_topic_code">FS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'PP'">
 				<field name="var_topic_facet">Inter-Partner Relationships</field>
+                  <field name="var_topic_code">PP</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'GC'">
 				<field name="var_topic_facet">Guidance/Counseling</field>
+                  <field name="var_topic_code">GC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'PS'">
 				<field name="var_topic_facet">Psychiatric Hospitals</field>
+                  <field name="var_topic_code">PS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'GR'">
 				<field name="var_topic_facet">Gender/Gender Role</field>
+                  <field name="var_topic_code">GR</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RA'">
 				<field name="var_topic_facet">Race/Ethnicity</field>
+                  <field name="var_topic_code">RA</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'HC'">
 				<field name="var_topic_facet">Inter-Other Family/Household Characteristics</field>
+                  <field name="var_topic_code">HC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RB'">
 				<field name="var_topic_facet">Reproductive Behavior</field>
+                  <field name="var_topic_code">RB</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'HL'">
 				<field name="var_topic_facet">Physical Health/Disease/Function</field>
+                  <field name="var_topic_code">HL</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RC'">
 				<field name="var_topic_facet">Recreation</field>
+                  <field name="var_topic_code">RC</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'HO'">
 				<field name="var_topic_facet">Hospital/Inpatient Acute Care</field>
+                  <field name="var_topic_code">HO</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RE'">
 				<field name="var_topic_facet">Region/State</field>
+                  <field name="var_topic_code">RE</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'HS'">
 				<field name="var_topic_facet">Family/Household Structure/Composition</field>
+                  <field name="var_topic_code">HS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RL'">
 				<field name="var_topic_facet">Religion/Ethics</field>
+                  <field name="var_topic_code">RL</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'IN'">
 				<field name="var_topic_facet">Intellectual Function</field>
+                  <field name="var_topic_code">IN</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'RS'">
 				<field name="var_topic_facet">Receipt of Health, Mental Health, Social Services</field>
+                  <field name="var_topic_code">RS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'IS'">
 				<field name="var_topic_facet">Institutions, Not Specified</field>
+                  <field name="var_topic_code">IS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SA'">
 				<field name="var_topic_facet">Substance Use</field>
+                  <field name="var_topic_code">SA</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'IV'">
 				<field name="var_topic_facet">Interview</field>
+                  <field name="var_topic_code">IV</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SD'">
 				<field name="var_topic_facet">Sexually Transmitted Disease</field>
+                  <field name="var_topic_code">SD</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'KR'">
 				<field name="var_topic_facet">Relationships with Other Kin</field>
+                  <field name="var_topic_code">KR</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SE'">
 				<field name="var_topic_facet">Sex Education</field>
+                  <field name="var_topic_code">SE</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MA'">
 				<field name="var_topic_facet">Anxiety Disorders</field>
+                  <field name="var_topic_code">MA</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SH'">
 				<field name="var_topic_facet">State Hospital</field>
+                  <field name="var_topic_code">SH</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MD'">
 				<field name="var_topic_facet">Marriage/Cohabitation Patterns</field>
+                  <field name="var_topic_code">MD</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SS'">
 				<field name="var_topic_facet">Inter-sibling Relationships</field>
+                  <field name="var_topic_code">SS</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'ME'">
 				<field name="var_topic_facet">Meta Level</field>
+                  <field name="var_topic_code">ME</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'SX'">
 				<field name="var_topic_facet">Sexuality</field>
+                  <field name="var_topic_code">SX</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MG'">
 				<field name="var_topic_facet">Organic Mental Syndromes</field>
+                  <field name="var_topic_code">MG</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'TP'">
 				<field name="var_topic_facet">Transfer Payments</field>
+                  <field name="var_topic_code">TP</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MH'">
 				<field name="var_topic_facet">Other Mental Health Disorders</field>
+                  <field name="var_topic_code">MH</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'UN'">
 				<field name="var_topic_facet">Undocumented</field>
+                  <field name="var_topic_code">UN</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'MI'">
 				<field name="var_topic_facet">Mental Institutions</field>
+                  <field name="var_topic_code">MI</field>
 			</xsl:when>
 			<xsl:when test="$topic = 'WF'">
 				<field name="var_topic_facet">Wealth/Finances/Material Things</field>
+                  <field name="var_topic_code">WF</field>
 			</xsl:when>
 			<xsl:otherwise>
 				<field name="var_topic_facet">No Value</field>				
@@ -462,54 +524,71 @@
 				<xsl:choose>
 			<xsl:when test="$type = 'A'">
 				<field name="var_type_facet">Attitudes/Values</field>
+                  <field name="var_type_code">A</field>
 			</xsl:when>
 			<xsl:when test="$type = 'B'">
 				<field name="var_type_facet">Behavior</field>
+                  <field name="var_type_code">B</field>
 			</xsl:when>
 			<xsl:when test="$type = 'C'">
 				<field name="var_type_facet">Cognition</field>
+                  <field name="var_type_code">C</field>
 			</xsl:when>
 			<xsl:when test="$type = 'E'">
 				<field name="var_type_facet">Emotion</field>
+                  <field name="var_type_code">E</field>
 			</xsl:when>
 			<xsl:when test="$type = 'H'">
 				<field name="var_type_facet">History</field>
+                  <field name="var_type_code">H</field>
 			</xsl:when>
 			<xsl:when test="$type = 'I'">
 				<field name="var_type_facet">Intention</field>
+                  <field name="var_type_code">I</field>
 			</xsl:when>
 			<xsl:when test="$type = 'M'">
 				<field name="var_type_facet">Motivation</field>
+                  <field name="var_type_code">M</field>
 			</xsl:when>
 			<xsl:when test="$type = 'O'">
 				<field name="var_type_facet">Other</field>
+                  <field name="var_type_code">O</field>
 			</xsl:when>
 			<xsl:when test="$type = 'P'">
 				<field name="var_type_facet">Program/Policy</field>
+                  <field name="var_type_code">P</field>
 			</xsl:when>
 			<xsl:when test="$type = 'R'">
 				<field name="var_type_facet">Reason</field>
+                  <field name="var_type_code">R</field>
 			</xsl:when>
 			<xsl:when test="$type = 'S'">
 				<field name="var_type_facet">Status</field>
+                  <field name="var_type_code">S</field>
 			</xsl:when>
 			<xsl:when test="$type = 'T'">
 				<field name="var_type_facet">Personality Trait</field>
+                  <field name="var_type_code">T</field>
 			</xsl:when>
 			<xsl:when test="$type = 'U'">
 				<field name="var_type_facet">Undocumented</field>
+                  <field name="var_type_code">U</field>
 			</xsl:when>
 			<xsl:when test="$type = 'V'">
 				<field name="var_type_facet">Time Use</field>
+                  <field name="var_type_code">V</field>
 			</xsl:when>
 			<xsl:when test="$type = 'X'">
 				<field name="var_type_facet">Meta</field>
+                  <field name="var_type_code">X</field>
 			</xsl:when>
 			<xsl:when test="$type = 'Y'">
 				<field name="var_type_facet">Aggregate/Incidence/Prevalence</field>
+                  <field name="var_type_code">Y</field>
 			</xsl:when>
 			<xsl:when test="$type = 'Z'">
 				<field name="var_type_facet">Household</field>
+                  <field name="var_type_code">Z</field>
 			</xsl:when>
 			<xsl:otherwise>
 				<field name="var_type_facet">No Value</field>				

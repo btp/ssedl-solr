@@ -281,10 +281,13 @@
 
     <!-- these fields are also used for display, so they must be stored -->
     <field name="archive_facet" type="string" indexed="true" stored="true" multiValued="false"/>
+    <field name="archive_code" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="nation_facet" type="string" indexed="true" stored="true" multiValued="true" />
     <field name="investigator_facet" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="var_topic_facet" type="string" indexed="true" stored="true" multiValued="false" />
+    <field name="var_topic_code" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_type_facet" type="string" indexed="true" stored="true" multiValued="false" />
+    <field name="var_type_code" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_alphanum_facet" type="string" indexed="true" stored="true" multiValued="false" />
     <!--
     <field name="isbn_t" type="text" indexed="true" stored="true" multiValued="true"/>

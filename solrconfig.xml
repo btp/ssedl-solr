@@ -116,6 +116,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
+          <!--btp: removed facet limit. -->
           <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
@@ -124,10 +125,13 @@
           <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
+          <str name="facet.field">archive_code</str>
           <str name="facet.field">nation_facet</str>
           <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
+          <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
+          <str name="facet.field">var_type_code</str>
           <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
@@ -155,10 +159,13 @@
           <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
+          <str name="facet.field">archive_code</str>
           <str name="facet.field">nation_facet</str>
           <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
+          <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
+          <str name="facet.field">var_type_code</str>
           <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
@@ -184,6 +191,7 @@
           <str name="fl">score</str>
           <str name="facet">true</str>
           <str name="facet.mincount">1</str>
+          <!--btp: removed facet limit. -->
           <!--str name="facet.limit">10</str-->
           <str name="facet.field">lc_1letter_facet</str>
           <str name="f.lc_1letter_facet.facet.sort">false</str>
@@ -192,10 +200,13 @@
           <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
+          <str name="facet.field">archive_code</str>
           <str name="facet.field">nation_facet</str>
           <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
+          <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
+          <str name="facet.field">var_type_code</str>
           <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
@@ -223,10 +234,13 @@
           <str name="facet.field">format</str>
 
           <str name="facet.field">archive_facet</str>
+          <str name="facet.field">archive_code</str>
           <str name="facet.field">nation_facet</str>
           <str name="facet.field">investigator_facet</str>
           <str name="facet.field">var_topic_facet</str>
+          <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
+          <str name="facet.field">var_type_code</str>
           <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
@@ -475,11 +489,14 @@
         var_label_display,
         val_display,
         archive_display, 
+        archive_code, 
         archive_facet, 
         nation_facet, 
         investigator_facet,
         var_topic_facet, 
+        var_topic_code, 
         var_type_facet, 
+        var_type_code, 
         var_alphanum_facet, 
         date,
       </str>
@@ -520,10 +537,13 @@
       <str name="facet.field">format</str>
 
       <str name="facet.field">archive_facet</str>
+      <str name="facet.field">archive_code</str>
       <str name="facet.field">nation_facet</str>
       <str name="facet.field">investigator_facet</str>
       <str name="facet.field">var_topic_facet</str>
+      <str name="facet.field">var_topic_code</str>
       <str name="facet.field">var_type_facet</str>
+      <str name="facet.field">var_type_code</str>
       <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
@@ -699,10 +719,13 @@
         val_display,
         archive_display, 
         archive_facet, 
+        archive_code, 
         nation_facet, 
         investigator_facet,
         var_topic_facet, 
+        var_topic_code, 
         var_type_facet, 
+        var_type_code, 
         var_alphanum_facet, 
         date,
       </str>
@@ -743,10 +766,13 @@
       <str name="facet.field">format</str>
 
       <str name="facet.field">archive_facet</str>
+      <str name="facet.field">archive_code</str>
       <str name="facet.field">nation_facet</str>
       <str name="facet.field">investigator_facet</str>
       <str name="facet.field">var_topic_facet</str>
+      <str name="facet.field">var_topic_code</str>
       <str name="facet.field">var_type_facet</str>
+      <str name="facet.field">var_type_code</str>
       <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
