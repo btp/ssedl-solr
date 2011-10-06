@@ -258,11 +258,7 @@
     <field name="sampling_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="instrument_display" type="string" indexed="false" stored="true" multiValued="true"/>
     <field name="response_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="download_use_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="download_study_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="download_ins_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="download_sup_display" type="string" indexed="false" stored="true" multiValued="false"/>
-    <field name="download_ddi2-1_display" type="string" indexed="false" stored="true" multiValued="false"/>
+    <field name="download_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <!-- variable-specific fields -->
     <field name="var_name_display" type="string" indexed="false" stored="true" multiValued="false"/>
     <field name="var_label_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -288,7 +284,6 @@
     <field name="var_topic_code" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_type_facet" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="var_type_code" type="string" indexed="true" stored="true" multiValued="false" />
-    <field name="var_alphanum_facet" type="string" indexed="true" stored="true" multiValued="false" />
     <!--
     <field name="isbn_t" type="text" indexed="true" stored="true" multiValued="true"/>
     <field name="language_facet" type="string" indexed="true" stored="true" multiValued="true" />

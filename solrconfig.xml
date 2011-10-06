@@ -132,7 +132,6 @@
           <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_type_code</str>
-          <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
           <!--
@@ -166,7 +165,6 @@
           <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_type_code</str>
-          <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
           <!--
@@ -207,7 +205,6 @@
           <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_type_code</str>
-          <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
           <!--
@@ -241,7 +238,6 @@
           <str name="facet.field">var_topic_code</str>
           <str name="facet.field">var_type_facet</str>
           <str name="facet.field">var_type_code</str>
-          <str name="facet.field">var_alphanum_facet</str>
           <str name="facet.field">date</str>
 
           <!--
@@ -480,11 +476,6 @@
         sampling_display,
         instrument_display,
         response_display,
-        download_use_display,
-        download_study_display,
-        download_ins_display,
-        download_sup_display,
-        download_ddi2-1_display,
         var_name_display,
         var_label_display,
         val_display,
@@ -497,7 +488,6 @@
         var_topic_code, 
         var_type_facet, 
         var_type_code, 
-        var_alphanum_facet, 
         date,
       </str>
      
@@ -544,7 +534,6 @@
       <str name="facet.field">var_topic_code</str>
       <str name="facet.field">var_type_facet</str>
       <str name="facet.field">var_type_code</str>
-      <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
       <!--
@@ -710,10 +699,6 @@
         sampling_display,
         instrument_display,
         response_display,
-        download_use_display,
-        download_study_display,
-        download_ins_display,
-        download_ddi2-1_display,
         var_name_display,
         var_label_display,
         val_display,
@@ -726,7 +711,6 @@
         var_topic_code, 
         var_type_facet, 
         var_type_code, 
-        var_alphanum_facet, 
         date,
       </str>
       
@@ -773,7 +757,6 @@
       <str name="facet.field">var_topic_code</str>
       <str name="facet.field">var_type_facet</str>
       <str name="facet.field">var_type_code</str>
-      <str name="facet.field">var_alphanum_facet</str>
       <str name="facet.field">date</str>
 
       <!--

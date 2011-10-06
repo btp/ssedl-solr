@@ -18,30 +18,23 @@
          <field name="title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="study_title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="abbr_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/altTitl"/></field>
-         <xsl:for-each select="codeBook/otherMat">
-            <xsl:if test="contains(labl,'User')">
-               <field name="download_use_display">
-                  &lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>use.zip"&gt;Download User's Guide&lt;/a&gt;
-               </field>
-            </xsl:if>
-            <xsl:if test="contains(labl,'Study')">
-               <field name="download_study_display">
-                  &lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>.zip"&gt;Download Study&lt;/a&gt;
-               </field>
-            </xsl:if>
-            <xsl:if test="contains(labl,'Instrument')">
-               <field name="download_ins_display">
-                  &lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>ins.zip"&gt;Download Instrument(s)&lt;/a&gt;
-               </field>
-            </xsl:if>
-            <xsl:if test="contains(labl,'Supplementary')">
-               <field name="download_sup_display">
-                  &lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>sup.zip"&gt;Download Supplementary Materials&lt;/a&gt;
-               </field>
-            </xsl:if>
-         </xsl:for-each>
-         <field name="download_ddi2-1_display">
-            &lt;a class="download" href="/download/<xsl:value-of select="codeBook/@ID"/>/<xsl:value-of select="codeBook/@ID"/>.xml"&gt;Download &lt;abbr title="Data Documentation Initiative"&gt;DDI&lt;/abbr&gt; 2.1 Codebook&lt;/a&gt;
+         <field name="download_display">
+            &lt;h2&gt;Downloads&lt;/h2&gt;
+            <xsl:for-each select="codeBook/otherMat">
+               <xsl:if test="contains(labl,'Study')">
+                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>.zip"&gt;Dataset Package&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+               </xsl:if>
+               <xsl:if test="contains(labl,'User')">
+                  &lt;h3&gt;&lt;a href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>use.pdf"&gt;User's Guide&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+               </xsl:if>
+               <xsl:if test="contains(labl,'Instrument')">
+                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>ins.zip"&gt;Instrument(s)&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+               </xsl:if>
+               <xsl:if test="contains(labl,'Supplementary')">
+                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>sup.zip"&gt;Supplementary Materials&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+               </xsl:if>
+            </xsl:for-each>
+            &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="codeBook/@ID"/>/<xsl:value-of select="codeBook/@ID"/>.xml"&gt;&lt;abbr title="Data Documentation Initiative"&gt;DDI&lt;/abbr&gt; Codebook&lt;/a&gt;&lt;/h3&gt;
          </field>
          <xsl:for-each select="codeBook/stdyDscr/citation/rspStmt/AuthEnty">
             <field name="investigator_facet"><xsl:value-of select="."/></field>
@@ -596,7 +589,6 @@
 				<field name="var_type_facet">No Value</field>				
 			</xsl:otherwise>
 		</xsl:choose>
-		<field name="var_alphanum_facet"><xsl:value-of select="varFormat/@type"/></field>
                 <field name="val_display">
                 &lt;p&gt;Summary Statistics:&lt;/p&gt;
                 &lt;ul&gt;
