@@ -10,8 +10,51 @@
             <xsl:value-of select="codeBook/stdyDscr/method/dataColl"/>
          </field>
          <field name="format">Study</field>
-         <field name="archive_facet"><xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer"/></field>
-         <field name="archive_code"><xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer/@abbr"/></field>
+         <xsl:variable name="archive" select="codeBook/docDscr/citation/prodStmt/producer/@abbr"/>
+         <field name="archive_code">
+            <xsl:choose>
+               <xsl:when test="$archive='AIDS-PETRA'">
+                  AIDS
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer/@abbr"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </field>
+         <field name="archive_facet">
+            <xsl:choose>
+               <xsl:when test="$archive='AFDA'">
+                  American Family Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='AIDS' or 'AIDS-PETRA">
+                  AIDS/STI Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='CWP'">
+                  Child Well-Being and Poverty Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='CAMDA'">
+                  Complementary and Alternative Medicine Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='CDA'">
+                  Contextual Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='DASRA'">
+                  Data Archive of Social Research on Aging
+               </xsl:when>
+               <xsl:when test="$archive='DAAPPP'">
+                  Data Archive on Adolescent Pregnancy and Pregnancy Prevention
+               </xsl:when>
+               <xsl:when test="$archive='MDA'">
+                  Maternal Drug Abuse Data Archive
+               </xsl:when>
+               <xsl:when test="$archive='RADIUS'">
+                  Research Archive on Disability in the U.S.
+               </xsl:when>
+               <xsl:otherwise>
+                  <xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer"/>
+               </xsl:otherwise>
+            </xsl:choose>
+         </field>
          <field name="archive_display">
             &lt;a href="/catalog/<xsl:value-of select="lower-case(codeBook/docDscr/citation/prodStmt/producer/@abbr)"/>"&gt;<xsl:value-of select="codeBook/docDscr/citation/prodStmt/producer"/>&lt;/a&gt;
          </field>
@@ -250,8 +293,51 @@
             <field name="var_search"><xsl:value-of select="." /></field>
             <field name="var_name_display"><xsl:value-of select="@name"/></field>
             <field name="format">Variable</field>
-            <field name="archive_facet"><xsl:value-of select="../../docDscr/citation/prodStmt/producer"/></field>
-            <field name="archive_code"><xsl:value-of select="../../docDscr/citation/prodStmt/producer/@abbr"/></field>
+            <xsl:variable name="archive" select="../../docDscr/citation/prodStmt/producer/@abbr"/>
+            <field name="archive_code">
+               <xsl:choose>
+                  <xsl:when test="$archive='AIDS-PETRA'">
+                     AIDS
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="../../docDscr/citation/prodStmt/producer/@abbr"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </field>
+            <field name="archive_facet">
+               <xsl:choose>
+                  <xsl:when test="$archive='AFDA'">
+                     American Family Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='AIDS' or 'AIDS-PETRA">
+                     AIDS/STI Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='CWP'">
+                     Child Well-Being and Poverty Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='CAMDA'">
+                     Complementary and Alternative Medicine Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='CDA'">
+                     Contextual Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='DASRA'">
+                     Data Archive of Social Research on Aging
+                  </xsl:when>
+                  <xsl:when test="$archive='DAAPPP'">
+                     Data Archive on Adolescent Pregnancy and Pregnancy Prevention
+                  </xsl:when>
+                  <xsl:when test="$archive='MDA'">
+                     Maternal Drug Abuse Data Archive
+                  </xsl:when>
+                  <xsl:when test="$archive='RADIUS'">
+                     Research Archive on Disability in the U.S.
+                  </xsl:when>
+                  <xsl:otherwise>
+                     <xsl:value-of select="../../docDscr/citation/prodStmt/producer"/>
+                  </xsl:otherwise>
+               </xsl:choose>
+            </field>
             <field name="archive_display">
                &lt;a href="/catalog/<xsl:value-of select="lower-case(../../docDscr/citation/prodStmt/producer/@abbr)"/>"&gt;<xsl:value-of select="../../docDscr/citation/prodStmt/producer"/>&lt;/a&gt;
             </field>
@@ -325,7 +411,6 @@
                    ]]>
                    </xsl:if>
             </field>
-            <xsl:variable name="archive" select="../../docDscr/citation/prodStmt/producer/@abbr"/>
             <xsl:variable name="topic" select="substring(@ID,1,2)"/>
             <xsl:variable name="type" select="substring(@ID,3,1)"/>
             <xsl:choose>
