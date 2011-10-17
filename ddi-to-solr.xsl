@@ -54,7 +54,7 @@
             </xsl:choose>
          </xsl:variable>
          <field name="archive_facet"><xsl:value-of select="$archive-facet"/></field>
-         <field name="archive_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
+         <field name="archive_display">&lt;a href="/ssedl/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
          <field name="title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="study_title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="abbr_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/altTitl"/></field>
@@ -332,7 +332,7 @@
                </xsl:choose>
             </xsl:variable>
             <field name="archive_facet"><xsl:value-of select="$archive-facet"/></field>
-            <field name="archive_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
+            <field name="archive_display">&lt;a href="/ssedl/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
             <field name="study_title_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="../../@ID"/>"&gt;<xsl:value-of select="../../stdyDscr/citation/titlStmt/titl"/>&lt;/a&gt;</field>
             <field name="abbr_display"><xsl:value-of select="../../stdyDscr/citation/titlStmt/altTitl"/></field>
             <field name="title_display"><xsl:value-of select="labl"/></field>
