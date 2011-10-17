@@ -54,7 +54,7 @@
             </xsl:choose>
          </xsl:variable>
          <field name="archive_facet"><xsl:value-of select="$archive-facet"/></field>
-         <field name="archive_display">&lt;a href="/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
+         <field name="archive_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
          <field name="title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="study_title_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/titl"/></field>
          <field name="abbr_display"><xsl:value-of select="codeBook/stdyDscr/citation/titlStmt/altTitl"/></field>
@@ -62,19 +62,19 @@
             &lt;h2&gt;Downloads&lt;/h2&gt;
             <xsl:for-each select="codeBook/otherMat">
                <xsl:if test="contains(labl,'Study')">
-                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>.zip"&gt;Dataset Package&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+                  &lt;h3&gt;&lt;a class="download" href="/ssedl/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>.zip"&gt;Dataset Package&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
                </xsl:if>
                <xsl:if test="contains(labl,'User')">
-                  &lt;h3&gt;&lt;a href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>use.pdf"&gt;User's Guide&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+                  &lt;h3&gt;&lt;a href="/ssedl/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>use.pdf"&gt;User's Guide&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
                </xsl:if>
                <xsl:if test="contains(labl,'Instrument')">
-                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>ins.zip"&gt;Instrument(s)&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+                  &lt;h3&gt;&lt;a class="download" href="/ssedl/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>ins.zip"&gt;Instrument(s)&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
                </xsl:if>
                <xsl:if test="contains(labl,'Supplementary')">
-                  &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>sup.zip"&gt;Supplementary Materials&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
+                  &lt;h3&gt;&lt;a class="download" href="/ssedl/download/<xsl:value-of select="/codeBook/@ID"/>/<xsl:value-of select="/codeBook/@ID"/>sup.zip"&gt;Supplementary Materials&lt;/a&gt;&lt;br/&gt;&lt;/h3&gt;
                </xsl:if>
             </xsl:for-each>
-            &lt;h3&gt;&lt;a class="download" href="/download/<xsl:value-of select="codeBook/@ID"/>/<xsl:value-of select="codeBook/@ID"/>.xml"&gt;&lt;acronym title="Data Documentation Initiative"&gt;DDI&lt;/acronym&gt; Codebook&lt;/a&gt;&lt;/h3&gt;
+            &lt;h3&gt;&lt;a class="download" href="/ssedl/download/<xsl:value-of select="codeBook/@ID"/>/<xsl:value-of select="codeBook/@ID"/>.xml"&gt;&lt;acronym title="Data Documentation Initiative"&gt;DDI&lt;/acronym&gt; Codebook&lt;/a&gt;&lt;/h3&gt;
          </field>
          <xsl:for-each select="codeBook/stdyDscr/citation/rspStmt/AuthEnty">
             <field name="investigator_facet"><xsl:value-of select="."/></field>
@@ -332,8 +332,8 @@
                </xsl:choose>
             </xsl:variable>
             <field name="archive_facet"><xsl:value-of select="$archive-facet"/></field>
-            <field name="archive_display">&lt;a href="/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
-            <field name="study_title_display">&lt;a href="/catalog/<xsl:value-of select="../../@ID"/>"&gt;<xsl:value-of select="../../stdyDscr/citation/titlStmt/titl"/>&lt;/a&gt;</field>
+            <field name="archive_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="lower-case($archive-code)"/>"&gt;<xsl:value-of select="$archive-facet"/>&lt;/a&gt;</field>
+            <field name="study_title_display">&lt;a href="/ssedl/catalog/<xsl:value-of select="../../@ID"/>"&gt;<xsl:value-of select="../../stdyDscr/citation/titlStmt/titl"/>&lt;/a&gt;</field>
             <field name="abbr_display"><xsl:value-of select="../../stdyDscr/citation/titlStmt/altTitl"/></field>
             <field name="title_display"><xsl:value-of select="labl"/></field>
             <field name="var_label_display"><xsl:value-of select="labl"/></field>
